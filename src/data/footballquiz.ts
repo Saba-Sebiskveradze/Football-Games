@@ -167,7 +167,7 @@ export const footballquiz: FootballQuiz[] = [
         question:
           "Who is Chelsea's all-time top goalscorer?",
         options: ["Bobby Tambling", "Didier Drogba", "Eden Hazard", "Frank Lampard"],
-        answer: "Eden Hazard",
+        answer: "Frank Lampard",
       },
 
     ],
