@@ -17,13 +17,13 @@ export const footballquiz: FootballQuiz[] = [
     title: "How do you remember Leicester 2015–16 season?",
     backgroundImage:
       "https://theanalyst.com/wp-content/uploads/2021/04/analyst-banner-leicester.jpg",
-    timestamp: new Date("2024-7-01").getTime(),
+    timestamp: new Date("2024-07-01").getTime(),
     difficulty:"Hard",
     questions: [
       {
         questionID: 1,
         question:
-          "Jamie Vardy was one of the shining stars of Leicester's unforgettable season. From which club did he move to Leicester?",
+          "Jamie Vardy was one of the shining stars of Leicester's unforgettable season. From which club did he move to Leicester? ",
         options: ["Birmingham", "Bournemouth", "Fleetwod", "AFC Wimbledon"],
         answer: "Fleetwod",
       },
@@ -102,7 +102,7 @@ export const footballquiz: FootballQuiz[] = [
     id: 2,
     title: "Guess the club's all-time top scorer",
     backgroundImage: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop",
-    timestamp: new Date("2024-8-01").getTime(),
+    timestamp: new Date("2024-08-01").getTime(),
     difficulty:"Medium",
 
     questions: [
@@ -179,56 +179,85 @@ export const footballquiz: FootballQuiz[] = [
 
     ],
   },
-  // {
-  //   id: 3,
-  //   title: "coaches",
-  //   backgroundImage: "https://images.unsplash.com/photo-1574772135913-d519461c3996?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   questions: [
-  //     {
-  //       question: "After Sir Alex Ferguson's magnificent career at Manchester United, who became the next coach of the Red Devils?",
-  //       options: ["France", "Brazil", "Germany", "Spain"],
-  //       answer: "France",
-  //     },
+  {
+    id: 3,
+    title: "Managers Quiz",
+    backgroundImage: "https://images.unsplash.com/photo-1574772135913-d519461c3996?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    timestamp: new Date("2024-09-01").getTime(),
+    difficulty:"Easy",
 
-  //   ],
-  // },
-  // {
-  //   id: 4,
-  //   title: "European Leagues",
-  //   backgroundImage: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=2070&auto=format&fit=crop",
-  //   questions: [
-  //     {
-  //       question: "Which country won the 2018 FIFA World Cup?",
-  //       options: ["France", "Brazil", "Germany", "Spain"],
-  //       answer: "France",
-  //     },
+    questions: [
+      {
+        questionID: 1,
+        question: "After Sir Alex Ferguson's magnificent career at Manchester United, who became the next coach of the Red Devils?",
+        options: ["Ryan Giggs", "David Moyes", "Louis van Gaal", "Ron Atkinson"],
+        answer: "David Moyes",
+      },
+      {
+        questionID: 2,
+        question:
+          "Which coach led Chelsea to their first-ever UEFA Champions League title in 2012?",
+        options: ["José Mourinho", "Roberto Di Matteo", "Carlo Ancelotti", "Antonio Conte"],
+        answer: "Roberto Di Matteo",
+      },
+      {
+        questionID: 3,
+        question:
+          "Before taking over Manchester United in 2016, José Mourinho was sacked by which club?",
+        options: ["Chelsea", "Real Madrid", "Inter Milan", "Porto"],
+        answer: "Chelsea",
+      },
+      {
+        questionID: 4,
+        question:
+          "Which coach led Portugal to victory in UEFA Euro 2016?",
+        options: ["Luiz Felipe Scolari", "Carlos Queiroz", "Fernando Santos", "José Mourinho"],
+        answer: "Fernando Santos",
+      },
+      {
+        questionID: 5,
+        question:
+          "Who was the manager of the Liverpool team that won the UEFA Champions League in 2005, coming back from a 3-0 deficit to win on penalties?",
+        options: ["Kenny Dalglish", "Brendan Rodgers", "Roy Hodgson", "Rafael Benitez"],
+        answer: "Rafael Benitez",
+      },
+      {
+        questionID: 6,
+        question:
+          "Which coach is known for his high-pressing style and managed RB Leipzig before joining Bayern Munich?",
+        options: ["Julian Nagelsmann", "Thomas Tuchel", "Hansi Flick", "Ralf Rangnick"],
+        answer: "Julian Nagelsmann",
+      },
+      {
+        questionID: 7,
+        question:
+          "Which coach led Tottenham Hotspur to their first UEFA Champions League final in 2019?",
+        options: ["José Mourinho", "Mauricio Pochettino", "Antonio Conte", "Nuno Espírito Santo"],
+        answer: "Mauricio Pochettino",
+      },
+      {
+        questionID: 8,
+        question:
+          "Which coach led Italy to victory in the 2020 UEFA European Championship (Euro 2020)?",
+        options: ["Marcello Lippi", "Carlo Ancelotti", "Antonio Conte", "Roberto Mancini"],
+        answer: "Roberto Mancini",
+      },
+      {
+        questionID: 9,
+        question:
+          "Who was the coach of Spain's national football team during Euro 2024?",
+        options: ["Luis Enrique", "Luis de la Fuente", "Julen Lopetegui", "Vicente del Bosque"],
+        answer: "Luis de la Fuente",
+      },
+      {
+        questionID: 10,
+        question:
+          "Which coach led Germany to victory in the 2014 FIFA World Cup?",
+        options: ["Joachim Löw", "Jürgen Klopp", "Ralf Rangnick", "Raymond Domenech"],
+        answer: "Joachim Löw",
+      },
 
-  //   ],
-  // },
-  // {
-  //   id: 5,
-  //   title: "World Cup Moments",
-  //   backgroundImage: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=2069&auto=format&fit=crop",
-  //   questions: [
-  //     {
-  //       question: "Which country won the 2018 FIFA World Cup?",
-  //       options: ["France", "Brazil", "Germany", "Spain"],
-  //       answer: "France",
-  //     },
-
-  //   ],
-  // },
-  // {
-  //   id: 6,
-  //   title: "Champions League Classics",
-  //   backgroundImage: "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?q=80&w=2023&auto=format&fit=crop",
-  //   questions: [
-  //     {
-  //       question: "Which country won the 2018 FIFA World Cup?",
-  //       options: ["France", "Brazil", "Germany", "Spain"],
-  //       answer: "France",
-  //     },
-
-  //   ],
-  // },
+    ],
+  },
+ 
 ];
