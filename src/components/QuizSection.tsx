@@ -1,19 +1,24 @@
 import { useNavigate } from "react-router-dom";
-import {footballquiz } from "../data/footballquiz";
-import { FC } from 'react';
+import { footballquiz } from "../data/footballquiz";
+import { FC } from "react";
 const QuizSection: FC = () => {
   const navigate = useNavigate();
+  const sortedQuiz = [...footballquiz].sort(
+    (a, b) => b.timestamp - a.timestamp
+  );
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-6xl md:text-8xl text-DavyGrey font-kodemono mb-16 text-center 
+      <h1
+        className="text-6xl md:text-8xl text-DavyGrey font-kodemono mb-16 text-center 
                      bg-gradient-to-r from-DavyGrey to-gray-500 bg-clip-text text-transparent
-                     animate-fade-in">
+                     animate-fade-in"
+      >
         FOOTBALL QUIZ
       </h1>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {footballquiz.map((quiz) => (
+        {sortedQuiz.map((quiz) => (
           <div
             key={quiz.id}
             onClick={() => navigate(`/footballquiz/${quiz.id}`)}
@@ -31,16 +36,29 @@ const QuizSection: FC = () => {
                 backgroundPosition: "center",
               }}
             />
-            
+
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70" />
 
             {/* Content */}
-            <div className="absolute inset-x-0 bottom-0 p-6">
-              <h2 className="text-xl font-bold text-white tracking-wide
+            <div className="absolute flex flex-col gap-[5px] inset-x-0 bottom-0 p-6">
+              <h2
+                className="text-xl font-bold text-white tracking-wide
                            transform transition-all duration-500
-                           group-hover:translate-y-0 translate-y-2">
+                           group-hover:translate-y-0 translate-y-2"
+              >
                 {quiz.title}
+              </h2>
+              <h2
+                className={`text-xl flex-end font-bold ${
+                  quiz.difficulty === "Medium"
+                    ? "text-orange-500"
+                    : quiz.difficulty === "Hard"
+                    ? "text-red-500"
+                    : "text-green-500" 
+                }`}
+              >
+                {quiz.difficulty}
               </h2>
             </div>
           </div>

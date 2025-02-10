@@ -2,6 +2,8 @@ export interface FootballQuiz {
   id: number;
   title: string;
   backgroundImage: string;
+  timestamp: number;
+  difficulty: "Easy" | "Medium" | "Hard"; 
   questions: {
     questionID: number;
     question: string;
@@ -15,6 +17,8 @@ export const footballquiz: FootballQuiz[] = [
     title: "How do you remember Leicester 2015–16 season?",
     backgroundImage:
       "https://theanalyst.com/wp-content/uploads/2021/04/analyst-banner-leicester.jpg",
+    timestamp: new Date("2024-7-01").getTime(),
+    difficulty:"Hard",
     questions: [
       {
         questionID: 1,
@@ -77,7 +81,7 @@ export const footballquiz: FootballQuiz[] = [
         questionID: 9,
         question:
           "Before joining Leicester City, which team did Claudio Ranieri coach?",
-        options: ["	Greece", "Italy", "Denmark", "Slovenia"],
+        options: ["Greece", "Italy", "Denmark", "Slovenia"],
         answer: "Greece",
       },
       {
@@ -98,6 +102,9 @@ export const footballquiz: FootballQuiz[] = [
     id: 2,
     title: "Guess the club's all-time top scorer",
     backgroundImage: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop",
+    timestamp: new Date("2024-8-01").getTime(),
+    difficulty:"Medium",
+
     questions: [
       {
         questionID: 1,
@@ -174,11 +181,11 @@ export const footballquiz: FootballQuiz[] = [
   },
   // {
   //   id: 3,
-  //   title: "MLS",
-  //   backgroundImage: "https://images.unsplash.com/photo-1654722592077-546a2ca2255c?q=80&w=1965&auto=format&fit=crop",
+  //   title: "coaches",
+  //   backgroundImage: "https://images.unsplash.com/photo-1574772135913-d519461c3996?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   //   questions: [
   //     {
-  //       question: "Which country won the 2018 FIFA World Cup?",
+  //       question: "After Sir Alex Ferguson's magnificent career at Manchester United, who became the next coach of the Red Devils?",
   //       options: ["France", "Brazil", "Germany", "Spain"],
   //       answer: "France",
   //     },
