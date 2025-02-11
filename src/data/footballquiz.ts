@@ -16,7 +16,7 @@ export const footballquiz: FootballQuiz[] = [
     id: 1,
     title: "How do you remember Leicester 2015–16 season?",
     backgroundImage:
-      "https://theanalyst.com/wp-content/uploads/2021/04/analyst-banner-leicester.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/152/445/179/soccer-leicester-city-f-c-emblem-logo-hd-wallpaper-preview.jpg",
     timestamp: new Date("2024-07-01").getTime(),
     difficulty:"Hard",
     questions: [
@@ -255,6 +255,86 @@ export const footballquiz: FootballQuiz[] = [
           "Which coach led Germany to victory in the 2014 FIFA World Cup?",
         options: ["Joachim Löw", "Jürgen Klopp", "Ralf Rangnick", "Raymond Domenech"],
         answer: "Joachim Löw",
+      },
+
+    ],
+  },
+  {
+    id: 4,
+    title: "How well do you know Neymar?",
+    backgroundImage: "https://c4.wallpaperflare.com/wallpaper/479/40/900/soccer-neymar-brazilian-paris-saint-germain-f-c-hd-wallpaper-preview.jpg",
+    timestamp: new Date("2024-10-01").getTime(),
+    difficulty:"Easy",
+
+    questions: [
+      {
+        questionID: 1,
+        question: "At which Brazilian club did Neymar start his professional career",
+        options: ["Flamengo", "Santos", "Fluminese", "Palmeiras"],
+        answer: "Santos",
+      },
+      {
+        questionID: 2,
+        question:
+          "He won the Champions League with Barcelona in 2015, but who did they beat 3-1 in the Berlin final?",
+        options: ["Bayern Munich", "Paris", "Liverpool", "Juventus"],
+        answer: "Juventus",
+      },
+      {
+        questionID: 3,
+        question:
+          "Neymar was transferred to Barcelona in the summer of what year?",
+        options: ["2012", "2013", "2014", "2015"],
+        answer: "2013",
+      },
+      {
+        questionID: 4,
+        question:
+          "Which year did Neymar won Olympic gold",
+        options: ["2012", "2014", "2016", "2018"],
+        answer: "2016",
+      },
+      {
+        questionID: 5,
+        question:
+          "Where Neymar was born",
+        options: ["São Paulo", "Rio de Janeiro", "Salvador", "Curitiba"],
+        answer: "São Paulo",
+      },
+      {
+        questionID: 6,
+        question:
+          "Which Saudi Arabian team did Neymar play for?",
+        options: ["Al-Nassr FC", "Al Hilal", "Al-Ittihad Club", "Al-Ahli Saudi FC"],
+        answer: "Al Hilal",
+      },
+      {
+        questionID: 7,
+        question:
+          "How did Neymar score his second goal in Barcelona's 6-1 comeback win over PSG in the 2016-17 UEFA Champions League?",
+        options: ["A close-range volley", "A solo goal dribbling past defenders", "A long-range free kick", "A penalty kick"],
+        answer: "A penalty kick",
+      },
+      {
+        questionID: 8,
+        question:
+          "What was the record-breaking transfer fee when Neymar moved from Barcelona to PSG in 2017?",
+        options: ["€180 million", "€200 million", "€222 million", "€250 million"],
+        answer: "€222 million",
+      },
+      {
+        questionID: 9,
+        question:
+          "What is Neymar's full name?",
+        options: ["Neymar dos Santos Junior", "Neymar da Silva Santos Junior", "Neymar Luiz de Souza", "Neymar Carlos da Silva"],
+        answer: "Neymar da Silva Santos Junior",
+      },
+      {
+        questionID: 10,
+        question:
+          "In which year did Neymar make his debut for Paris Saint-Germain?",
+        options: ["2015", "2016", "2017", "2018"],
+        answer: "2017",
       },
 
     ],

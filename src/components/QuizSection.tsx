@@ -12,7 +12,7 @@ const QuizSection: FC = () => {
       <h1
         className="text-6xl md:text-8xl text-DavyGrey font-kodemono mb-16 text-center 
                      bg-gradient-to-r from-DavyGrey to-gray-500 bg-clip-text text-transparent
-                     animate-fade-in"
+                     animate-fade-in "
       >
         FOOTBALL QUIZ
       </h1>

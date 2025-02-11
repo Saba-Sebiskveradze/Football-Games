@@ -1,20 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
 @import "tailwindcss";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 @theme {
   --font-kavoon: "Kavoon", "serif";
   --font-kodemono: "Kode Mono", "serif";
 
-  --color-LavenderMist: rgba(217, 234, 253, 1);
-  --color-DavyGrey: rgba(72, 86, 100, 1);
-  --color-CrystalBlue: rgba(96, 171, 255, 1);
-  --color-quiz-accent: rgba(99, 102, 241,1);
-  
+  --color-LavenderMist: #d9eafd;
+  --color-DavyGrey: #485664;
+  --color-CrystalBlue: #60abff;
+  --color-quiz-accent: #6366f1;
 }
