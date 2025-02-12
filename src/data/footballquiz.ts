@@ -339,5 +339,84 @@ export const footballquiz: FootballQuiz[] = [
 
     ],
   },
+  {
+    id: 5,
+    title: "The Zlatan Ibrahimović Quiz",
+    backgroundImage: "https://c4.wallpaperflare.com/wallpaper/464/218/338/soccer-ac-milan-zlatan-ibrahimovic-1920x1200-sports-football-hd-art-wallpaper-preview.jpg",
+    timestamp: new Date("2024-11-01").getTime(),
+    difficulty:"Medium",
+
+    questions: [
+      {
+        questionID: 1,
+        question: "In which year did Zlatan Ibrahimović score his famous bicycle kick goal against England in a friendly?",
+        options: ["2011", "2012", "2013", "2014"],
+        answer: "2012",
+      },
+      {
+        questionID: 2,
+        question:
+          "Which club did Zlatan Ibrahimović play for before joining Inter in 2009?",
+        options: ["AC Milan", "Juventus", "Malmö FF", "Ajax"],
+        answer: "Juventus",
+      },
+      {
+        questionID: 3,
+        question:
+          "How many official clubs did Zlatan Ibrahimović play for during his professional career?",
+        options: ["8", "9", "10", "11"],
+        answer: "10",
+      },
+      {
+        questionID: 4,
+        question:
+          "In 2009, Zlatan moved from Inter Milan to Barcelona. Which player was involved in the swap deal?",
+        options: ["Thierry Henry", "Samuel Eto’o", "Pedro", "Alexis Sánchez"],
+        answer: "Samuel Eto’o",
+      },
+      {
+        questionID: 5,
+        question:
+          "Zlatan once claimed he rejected a trial offer from which English club as a teenager?",
+        options: ["Chelsea", "Manchester United", "Liverpool", "Arsenal"],
+        answer: "Arsenal",
+      },
+      {
+        questionID: 6,
+        question:
+          "Zlatan won the 2016-17 UEFA Europa League with Manchester United. Which team did they defeat in the final?",
+        options: ["Villarreal", "Ajax", "Sevilla", "Benfica"],
+        answer: "Ajax",
+      },
+      {
+        questionID: 7,
+        question: "At which club did Zlatan Ibrahimović achieve his first Serie A title?",
+        options: ["Inter Milan", "AC Milan", "Juventus", "Roma"],
+        answer: "Inter Milan",
+      },
+      {
+        questionID: 8,
+        question:
+          "Zlatan won the Ligue 1 Golden Boot (Top Scorer) for PSG multiple times. How many times did he achieve this?",
+        options: ["2", "3", "4", "5"],
+        answer: "4",
+      },
+      {
+        questionID: 9,
+        question:
+          "Zlatan’s move from Barcelona to AC Milan in 2010 was initially what type of transfer?",
+        options: ["Straight purchase", "Loan with an obligation to buy", "Loan with an option to buy", "Free transfer"],
+        answer: "Loan with an option to buy",
+      },
+      {
+        questionID: 10,
+        question:
+          "How many trophies did Zlatan win during his time at Manchester United?",
+        options: ["1", "2", "3", "4"],
+        answer: "3",
+      },
+
+    ],
+  },
  
 ];
