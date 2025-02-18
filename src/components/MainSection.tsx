@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FC } from "react";
+import { FC, useState } from "react";
 
 interface Card {
   id: number;
@@ -33,6 +33,8 @@ const cards: Card[] = [
 ];
 
 const MainSection: FC = () => {
+    const [imageLoaded, setImageLoaded] = useState<{ [key: number]: boolean }>({});
+  
   return (
     <div className="container mx-auto px-4 py-16 min-h-screen">
       <div className="flex flex-col items-center gap-8 md:gap-16">
@@ -52,6 +54,22 @@ const MainSection: FC = () => {
                 backgroundPosition: "center",
               }}
             />
+            {/* Loading Spinner */}
+            {!imageLoaded[card.id] && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#000000]"></div>
+                </div>
+              )}
+
+              {/* Hidden Image to Trigger onLoad Event */}
+              <img
+                src={card.backgroundImage}
+                alt="Quiz Background"
+                className="hidden"
+                onLoad={() =>
+                  setImageLoaded((prev) => ({ ...prev, [card.id]: true }))
+                }
+              />
 
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#000000B3]" />
 

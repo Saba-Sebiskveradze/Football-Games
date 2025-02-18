@@ -1,18 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { footballquiz } from "../data/footballquiz";
-import { FC } from "react";
+import { FC, useState } from "react"; // Import useState
+
 const QuizSection: FC = () => {
   const navigate = useNavigate();
-  const sortedQuiz = [...footballquiz].sort(
-    (a, b) => b.timestamp - a.timestamp
-  );
+  const sortedQuiz = [...footballquiz].sort((a, b) => b.timestamp - a.timestamp);
+
+  // State to track image loading for each quiz
+  const [imageLoaded, setImageLoaded] = useState<{ [key: number]: boolean }>({});
 
   return (
     <div className="container mx-auto px-4 py-16">
       <h1
         className="text-6xl md:text-8xl text-[#485664] font-kodemono mb-16 text-center 
                      bg-[#485664] bg-clip-text text-transparent
-                     animate-fade-in "
+                     animate-fade-in"
       >
         QUIZ
       </h1>
@@ -35,7 +37,24 @@ const QuizSection: FC = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-            />
+            >
+              {/* Loading Spinner */}
+              {!imageLoaded[quiz.id] && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#000000]"></div>
+                </div>
+              )}
+
+              {/* Hidden Image to Trigger onLoad Event */}
+              <img
+                src={quiz.backgroundImage}
+                alt="Quiz Background"
+                className="hidden"
+                onLoad={() =>
+                  setImageLoaded((prev) => ({ ...prev, [quiz.id]: true }))
+                }
+              />
+            </div>
 
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70" />
@@ -59,7 +78,7 @@ const QuizSection: FC = () => {
                       ? "#EF4444"
                       : "#22C55E",
                 }}
-                >
+              >
                 {quiz.difficulty}
               </h2>
             </div>

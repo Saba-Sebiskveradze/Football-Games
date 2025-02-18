@@ -13,6 +13,7 @@ const GuessByPictureQuiz = () => {
   const [showResults, setShowResults] = useState(false);
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
   const [missedQuestion, setMissedQuestion] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(true); // New state for image loading
 
   // Early return if quiz is not found
   if (!quiz) {
@@ -72,6 +73,7 @@ const GuessByPictureQuiz = () => {
       setUserAnswer("");
       setAnswerIsCorrect(false);
       setMissedQuestion(false);
+      setIsImageLoading(true); 
     } else {
       setShowResults(true);
     }
@@ -107,7 +109,7 @@ const GuessByPictureQuiz = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#ebf5ff] to-[#f3e8ff] p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-[#f9fafb] p-4">
       <div className="max-w-5xl w-full mx-auto bg-[#ffffff] rounded-2xl shadow-lg overflow-hidden">
         <div className="p-6 border-b border-[#e5e7eb]">
           <div className="flex justify-between items-center">
@@ -120,19 +122,33 @@ const GuessByPictureQuiz = () => {
           </div>
         </div>
         {missedQuestion || answerIsCorrect ? (
-          <div
-            className="h-96 md:h-[36rem] bg-contain bg-center bg-no-repeat transition-opacity duration-500"
-            style={{
-              backgroundImage: `url(${quiz.questions[currentQuestion].image2})`,
-            }}
-          />
+          <div className="h-96 md:h-[36rem] flex items-center justify-center">
+            {isImageLoading && (
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#000000]"></div>
+            )}
+            <img
+              src={quiz.questions[currentQuestion].image2}
+              alt="Quiz"
+              className={`h-full w-full object-contain ${
+                isImageLoading ? "hidden" : "block"
+              }`}
+              onLoad={() => setIsImageLoading(false)}
+            />
+          </div>
         ) : (
-          <div
-            className="h-96 md:h-[36rem] bg-contain bg-center bg-no-repeat transition-opacity duration-500"
-            style={{
-              backgroundImage: `url(${quiz.questions[currentQuestion].image})`,
-            }}
-          />
+          <div className="h-96 md:h-[36rem] flex items-center justify-center">
+            {isImageLoading && (
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#000000]"></div>
+            )}
+            <img
+              src={quiz.questions[currentQuestion].image}
+              alt="Quiz"
+              className={`h-full w-full object-contain ${
+                isImageLoading ? "hidden" : "block"
+              }`}
+              onLoad={() => setIsImageLoading(false)}
+            />
+          </div>
         )}
 
         <div className="p-6">
