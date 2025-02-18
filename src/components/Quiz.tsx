@@ -31,7 +31,7 @@ const Quiz = () => {
           <button 
             onClick={() => navigate("/footballquiz")}
             style={{ backgroundColor: '#2563eb' }}
-            className="px-4 py-2 text-white rounded-lg hover:opacity-90 transition-opacity"
+            className="px-4 py-2 text-[#fff] rounded-lg hover:opacity-90 transition-opacity"
           >
             Back to Quizzes
           </button>

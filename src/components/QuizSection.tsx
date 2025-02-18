@@ -10,8 +10,8 @@ const QuizSection: FC = () => {
   return (
     <div className="container mx-auto px-4 py-16">
       <h1
-        className="text-6xl md:text-8xl text-DavyGrey font-kodemono mb-16 text-center 
-                     bg-gradient-to-r from-DavyGrey to-gray-500 bg-clip-text text-transparent
+        className="text-6xl md:text-8xl text-[#485664] font-kodemono mb-16 text-center 
+                     bg-[#485664] bg-clip-text text-transparent
                      animate-fade-in "
       >
         QUIZ
@@ -50,14 +50,16 @@ const QuizSection: FC = () => {
                 {quiz.title}
               </h2>
               <h2
-                className={`text-xl flex-end font-bold ${
-                  quiz.difficulty === "Medium"
-                    ? "text-orange-500"
-                    : quiz.difficulty === "Hard"
-                    ? "text-red-500"
-                    : "text-green-500" 
-                }`}
-              >
+                className="text-xl font-bold"
+                style={{
+                  color:
+                    quiz.difficulty === "Medium"
+                      ? "#F97316"
+                      : quiz.difficulty === "Hard"
+                      ? "#EF4444"
+                      : "#22C55E",
+                }}
+                >
                 {quiz.difficulty}
               </h2>
             </div>

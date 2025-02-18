@@ -10,8 +10,8 @@ const GuessByPicture: FC = () => {
   return (
     <div><div className="container mx-auto px-4 py-16">
     <h1
-      className="text-6xl md:text-8xl text-DavyGrey font-kodemono mb-16 text-center 
-                   bg-gradient-to-r from-DavyGrey to-gray-500 bg-clip-text text-transparent
+      className="text-6xl md:text-8xl text-[#485664] font-kodemono mb-16 text-center 
+                   bg-[#485664]  bg-clip-text text-transparent
                    animate-fade-in "
     >
       GUESS BY PHOTO
@@ -43,7 +43,7 @@ const GuessByPicture: FC = () => {
           {/* Content */}
           <div className="absolute flex flex-col gap-[5px] inset-x-0 bottom-0 p-6">
             <h2
-              className="text-xl font-bold text-white tracking-wide
+              className="text-xl font-bold text-[#fff] tracking-wide
                          transform transition-all duration-500
                          group-hover:translate-y-0 translate-y-2"
             >

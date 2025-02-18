@@ -58,7 +58,7 @@ const MainSection: FC = () => {
             <div className="absolute inset-x-0 bottom-0 p-4 md:p-8">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <h2
-                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#fff] tracking-wide
                          transform transition-all duration-500
                          group-hover:translate-y-0 translate-y-2"
                 >

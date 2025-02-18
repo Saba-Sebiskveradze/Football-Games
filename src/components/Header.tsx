@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 const Header: FC = () => {
   return (
-    <header className="bg-gradient-to-b from-LavenderMist to-white border-b border-DavyGrey ">
+    <header className="bg-#fff shadow-[0_1px_6px_0_rgba(0,0,0,0.07)]">
       <div className="container mx-auto px-4 h-40 flex items-center justify-between ">
         <Link to="/" className="group">
           <h1 className="text-4xl md:text-6xl text-DavyGrey font-kavoon

@@ -56,14 +56,14 @@ const GuessByPictureQuiz = () => {
     ) {
       setScore(score + 1);
       setAnswerIsCorrect(true);
-      setMissedQuestion(false); 
+      setMissedQuestion(false);
     } else {
       setAnswerIsCorrect(false);
     }
   };
 
   const missQuestion = () => {
-    setMissedQuestion(true); 
+    setMissedQuestion(true);
   };
 
   const nextQuestion = () => {
@@ -71,9 +71,9 @@ const GuessByPictureQuiz = () => {
       setCurrentQuestion(currentQuestion + 1);
       setUserAnswer("");
       setAnswerIsCorrect(false);
-      setMissedQuestion(false); 
+      setMissedQuestion(false);
     } else {
-      setShowResults(true); 
+      setShowResults(true);
     }
   };
 
@@ -97,7 +97,7 @@ const GuessByPictureQuiz = () => {
 
           <button
             onClick={() => navigate("/guessbypicture")}
-            className="w-full px-6 py-3 bg-[#9333ea] backdrop-blur-md text-white rounded-lg border border-[#ffffff1a] hover:bg-[#ffffff4d] hover:shadow-lg transition-all duration-300"
+            className="w-full px-6 py-3 bg-[#9333ea] backdrop-blur-md text-white rounded-lg border border-[#ffffff1a] cursor-pointer"
           >
             Back to Quizzes
           </button>
@@ -119,13 +119,21 @@ const GuessByPictureQuiz = () => {
             </div>
           </div>
         </div>
-
-        <div
-          className="h-96 md:h-[36rem] bg-contain bg-center bg-no-repeat transition-opacity duration-500"
-          style={{
-            backgroundImage: `url(${quiz.questions[currentQuestion].image})`,
-          }}
-        />
+        {missedQuestion || answerIsCorrect ? (
+          <div
+            className="h-96 md:h-[36rem] bg-contain bg-center bg-no-repeat transition-opacity duration-500"
+            style={{
+              backgroundImage: `url(${quiz.questions[currentQuestion].image2})`,
+            }}
+          />
+        ) : (
+          <div
+            className="h-96 md:h-[36rem] bg-contain bg-center bg-no-repeat transition-opacity duration-500"
+            style={{
+              backgroundImage: `url(${quiz.questions[currentQuestion].image})`,
+            }}
+          />
+        )}
 
         <div className="p-6">
           <div className="flex flex-col items-center space-y-4">
@@ -137,7 +145,7 @@ const GuessByPictureQuiz = () => {
               onChange={checkQuestion}
             />
             {answerIsCorrect && (
-              <div className="w-full max-w-md p-4 bg-gradient-to-r from-[#86efac] to-[#bbf7d0] border border-[#4ade80] rounded-lg text-[#166534] text-center text-lg font-semibold flex items-center justify-center space-x-2">
+              <div className="w-full max-w-md p-4 bg-[#86efac] border border-[#4ade80] rounded-lg text-[#166534] text-center text-lg font-semibold flex items-center justify-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -158,7 +166,7 @@ const GuessByPictureQuiz = () => {
               </div>
             )}
             {missedQuestion && (
-              <div className="w-full max-w-md p-4 bg-gradient-to-r from-[#fee2e2] to-[#fecdd3] border border-[#f87171] rounded-lg text-[#7f1d1d] text-center text-lg font-semibold flex items-center justify-center space-x-2">
+              <div className="w-full max-w-md p-4 bg-[#fee2e2] border border-[#f87171] rounded-lg text-[#7f1d1d] text-center text-lg font-semibold flex items-center justify-center space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -184,16 +192,16 @@ const GuessByPictureQuiz = () => {
             {missedQuestion || answerIsCorrect ? (
               <button
                 onClick={nextQuestion}
-                className="px-6 py-3 bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6] text-[#ffffff] rounded-lg hover:from-[#2563eb] hover:to-[#7c3aed] transition-all"
+                className="px-6 py-3 bg-[#3b82f6] text-[#ffffff] rounded-lg hover:from-[#2563eb] hover:to-[#7c3aed] transition-all"
               >
                 Next Photo
               </button>
             ) : (
               <button
                 onClick={missQuestion}
-                className="px-6 py-3 bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6] text-[#ffffff] rounded-lg hover:from-[#2563eb] hover:to-[#7c3aed] transition-all"
+                className="px-6 py-3 bg-[#3b82f6] text-[#ffffff] rounded-lg hover:from-[#2563eb] hover:to-[#7c3aed] transition-all"
               >
-                Miss Photo
+                Reveal Answer
               </button>
             )}
           </div>
