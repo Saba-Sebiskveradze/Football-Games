@@ -11,9 +11,9 @@ interface Card {
 const cards: Card[] = [
   {
     id: 1,
-    title: "FOOTBALL QUIZ",
+    title: "CAN YOU NAME EVERY...",
     backgroundImage:
-      "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://test1-emgndhaqd0c9h2db.a01.azurefd.net/images/df7c6bfc-28fc-4a95-a257-e24b234071ba.png",
     textColor: "#485664",
   },
   {
@@ -25,9 +25,9 @@ const cards: Card[] = [
   },
   {
     id: 3,
-    title: "COMING SOON...",
+    title: "FOOTBALL QUIZ",
     backgroundImage:
-      "https://images.unsplash.com/photo-1602472097151-72eeec7a3185?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     textColor: "#485664",
   },
 ];
@@ -84,7 +84,15 @@ const MainSection: FC = () => {
                 </h2>
 
                 <Link
-                  to={card.id === 1 ? "/footballquiz" : "/guessbypicture"}
+                  to={
+                    card.id === 1
+                      ? "/canyouname"
+                      : card.id === 2
+                      ? "/guessbypicture"
+                      : card.id === 3
+                      ? "/footballquiz"
+                      : "/"
+                  }
                   className="relative overflow-hidden bg-[#ffffffE6] text-[#1F2937] px-6 py-3 md:px-8 md:py-4 rounded-full
                        transition-all duration-300 transform hover:scale-105 hover:shadow-xl
                        hover:bg-[#ffffffF2] font-semibold text-lg md:text-xl tracking-wide"

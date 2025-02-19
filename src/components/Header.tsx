@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import ballLogo from '../../public/ballLogo.png'
+import ballLogo from '/ballLogo.png'
 const Header: FC = () => {
   return (
     <header className="bg-#fff shadow-[0_1px_6px_0_rgba(0,0,0,0.07)]">

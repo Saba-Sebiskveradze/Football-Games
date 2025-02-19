@@ -4,6 +4,8 @@ import MainPage from "./pages/MainPage";
 import QuizPage from "./pages/QuizPage";
 import GuessByPicturePage from "./pages/GuessByPicturePage";
 import GuessByPictureQuizPage from "./pages/GuessByPictureQuizPage";
+import CanYouNamePage from "./pages/CanYouNamePage";
+import CanYouNameQuizPage from "./pages/CanYouNameQuizPage";
 const App = () => {
   return (
     <>
@@ -14,7 +16,8 @@ const App = () => {
           <Route path="/footballquiz/:id" element={<QuizPage />} />
           <Route path="/guessbypicture" element={<GuessByPicturePage />} />
           <Route path="/guessbypicture/:id" element={<GuessByPictureQuizPage />} />
-
+          <Route path="/canyouname" element={<CanYouNamePage />} />
+          <Route path="/canyouname/:id" element={<CanYouNameQuizPage />} />
         </Routes>
       </Router>
     </>
