@@ -8,7 +8,6 @@ const CanYouNameQuiz = () => {
   const quiz = canyouname.find((q) => q.id === Number(id));
 
   const [guessedName, setGuessedName] = useState(0);
-  const [score, setScore] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
   const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
   const [timeLeft, setTimeLeft] = useState(600); // 1 minute = 60 seconds
@@ -81,7 +80,6 @@ const CanYouNameQuiz = () => {
     if (correctAnswers.length > 0) {
       const answer = correctAnswers[0];
       if (!answeredQuestions.includes(answer.answerId)) {
-        setScore((prevScore) => prevScore + answer.point);
         setGuessedName((prevGuessed) => prevGuessed + 1);
         setAnsweredQuestions((prev) => [...prev, answer.answerId]);
         setUserAnswer("");
@@ -127,11 +125,9 @@ const CanYouNameQuiz = () => {
             <div className="p-6 border-b border-[#e5e7eb]">
             <div className="flex justify-around items-center">
               <h2 className="text-lg font-medium text-[#485664]">
-                {guessedName} Out of {quiz.answers.length}
+                You Correctly Guessed {guessedName} Out of {quiz.answers.length}
               </h2>
-              <div className="text-lg font-medium text-[#485664]">
-                Score: {score}
-              </div>
+             
             </div>
           </div>
           </div>
@@ -154,9 +150,7 @@ const CanYouNameQuiz = () => {
                   </h3>
                 </div>
                 <div className="bg-[#f9fafb] px-6 py-3 rounded-lg">
-                  <span className="text-lg text-[#3f3f46]">
-                    {answer.point} Points
-                  </span>
+                  
                 </div>
               </div>
             ))}
@@ -174,17 +168,14 @@ const CanYouNameQuiz = () => {
             <h2 className="text-lg font-medium text-[#4b5563]">
               {guessedName} Out of {quiz.answers.length}
             </h2>
-            <div className="text-lg font-medium text-[#4b5563]">
-              Score: {score}
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col items-center space-y- text-lg  font-bold text-[#485664]">
-          <div className="w-full max-w-md p-3 flex flex-col items-center ">
+            <div className="text-lg  font-bold text-[#485664] ">
             Time Left: {Math.floor(timeLeft / 60)}:
             {String(timeLeft % 60).padStart(2, "0")}
           </div>
+          </div>
+
         </div>
+        
         {!isQuizStarted ? (
           <div className="flex flex-col items-center p-8">
             <button
@@ -195,11 +186,13 @@ const CanYouNameQuiz = () => {
             </button>
           </div>
         ) : (
-          <div className="p-6">
-            <div className="flex flex-col items-center space-y-4">
+          <div className="">
+                      <div className="text-[#485664] p-6 font-bold text-2xl flex flex-col items-center"> {quiz.title}</div>
+
+            <div className="flex flex-col items-center space-y-4 pb-6">
               <input
                 type="text"
-                className="w-full max-w-md p-3 border border-[#d1d5db] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent transition-all"
+                className="w-full max-w-md p-3 border border-[#d1d5db]  rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3b82f6] focus:border-transparent transition-all"
                 placeholder="Enter your guess here..."
                 value={userAnswer}
                 onChange={checkAnswer}
@@ -207,28 +200,44 @@ const CanYouNameQuiz = () => {
             </div>
           </div>
         )}
+       
 
-        <div className="p-6 space-y-4 max-h-[36rem] overflow-y-auto border-t border-[#e5e7eb]">
+        <div className="p-6 space-y-4 max-h-[36rem] overflow-y-auto border-t border-[#e5e7eb] ">
+        <div className="flex items-center space-x-4 bg-[#808080]  border rounded-lg ">
+            <div className="flex-1">
+                <h3 className="text-lg font-medium p-6 text-[#fff]">
+                  Name
+                </h3>
+              </div>
+              <div className="bg-[#fff] text-[#000] px-7 py-7 rounded-lg ">
+                <div className="w-[50px] flex flex-col items-center text-bold">
+                {quiz.resultName}
+
+                </div>
+              </div>
+
+            </div>
           {quiz.answers.map((answer) => (
             <div
               key={answer.answerId}
-              className={`flex items-center space-x-4 p-4 border rounded-lg ${
+              className={`flex items-center space-x-4  border rounded-lg ${
                 answeredQuestions.includes(answer.answerId)
                   ? "bg-[#86efac] border-[#4ade80]"
                   : "border-[#d1d5db]"
               }`}
             >
               <div className="flex-1">
-                <h3 className="text-lg font-medium text-[#2d2d2d]">
+                <h3 className="text-lg font-medium p-6 text-[#2d2d2d]">
                   {answeredQuestions.includes(answer.answerId)
                     ? answer.fullName
                     : "******"}
                 </h3>
               </div>
-              <div className="bg-[#f9fafb] px-6 py-3 rounded-lg">
-                <span className="text-lg text-[#3f3f46]">
-                  {answer.point} Points
-                </span>
+              <div className="bg-[#808080] text-[#fff] px-7 py-7 rounded-lg">
+                <div className="w-[20px]">
+                {answer.result}
+
+                </div>
               </div>
             </div>
           ))}
